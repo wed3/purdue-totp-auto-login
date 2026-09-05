@@ -87,3 +87,7 @@ node --test tests/*.test.js
 - [How to obtain and register a Base32 OATH-TOTP secret](https://service.purdue.edu/TDClient/32/Purdue/KB/PrintArticle?ID=2219)
 
 This project is not endorsed by or affiliated with Purdue University or Microsoft.
+
+## License
+
+MIT
