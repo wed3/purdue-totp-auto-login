@@ -1,6 +1,6 @@
 # Purdue TOTP Auto Login
 
-A Chromium extension that completes Purdue's new Microsoft MFA verification-code, with optional stored-password **one-click mode**. It does not emulate Microsoft Authenticator or approve push notifications. It makes no separate network requests. It only fills and submits the normal sign-in forms automatically so you don't have to pull your phone out every time.
+A Chromium extension that completes Purdue's new Microsoft MFA verification code, with optional **one-click mode**. It does not emulate Microsoft Authenticator or approve push notifications. It makes no separate network requests. It only fills and submits the normal sign-in forms automatically so you don't have to pull your phone out every time.
 
 ## What it does
 
