@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Purdue TOTP Auto Login",
+  "version": "0.2.0",
+  "minimum_chrome_version": "102",
+  "description": "Completes Purdue Microsoft MFA with a locally generated TOTP code after you start a login.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "src/service_worker.js"
+  },
+  "action": {
+    "default_title": "Purdue TOTP Auto Login",
+    "default_popup": "src/popup.html"
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://sso.purdue.edu/*"
+      ],
+      "js": [
+        "src/purdue_login.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://login.microsoftonline.com/*"
+      ],
+      "js": [
+        "src/microsoft_login.js"
+      ],
+      "css": [
+        "src/microsoft_login.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

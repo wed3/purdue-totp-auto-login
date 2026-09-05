@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Purdue TOTP Auto Login Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>Purdue TOTP Auto Login</h1>
+  <p><b>Version 0.2.0</b></p>
+  <p>
+    Click <b>Auto log in</b> once to start. You can enter your password yourself,
+    or enable one-click mode below.
+  </p>
+
+  <hr>
+
+  <h2>Authenticator setup</h2>
+  <ol>
+    <li>Open <a href="https://mysignins.microsoft.com/security-info" target="_blank" rel="noreferrer">Microsoft Security Info</a> and sign in with your Purdue account.</li>
+    <li>Select <b>Add sign-in method</b>, then <b>Authenticator app</b>.</li>
+    <li>Select <b>I want to use a different authenticator app</b>.</li>
+    <li>Select <b>Can't scan QR code?</b> and copy the Base32 secret key.</li>
+    <li>Paste it below, save, then use the test code to finish enrollment.</li>
+  </ol>
+
+  <hr>
+
+  <form id="settings">
+    <h2>Settings</h2>
+
+    <p>
+      <label for="username"><b>Purdue username</b> (optional)</label><br>
+      <input id="username" name="username" type="text" autocomplete="username" placeholder="pete123 or pete123@purdue.edu">
+      <br>
+      <small>Required for one-click mode.</small>
+    </p>
+
+    <p>
+      <label for="totpSecret"><b>TOTP secret</b></label><br>
+      <input id="totpSecret" name="totpSecret" type="password" autocomplete="off" spellcheck="false" placeholder="JBSWY3DPEHPK3PXP" required>
+      <button id="toggleSecret" type="button">Show</button>
+    </p>
+
+    <p>
+      <label><input id="enabled" type="checkbox"> Enable the extension</label><br>
+      <label><input id="autoSelectMethod" type="checkbox"> Automatically choose verification code</label><br>
+      <label><input id="autoSubmit" type="checkbox"> Automatically submit the generated code</label>
+    </p>
+
+    <fieldset>
+      <legend><b>One-click mode</b></legend>
+
+      <p>
+        <label>
+          <input id="oneClick" type="checkbox">
+          Store my password locally and complete the login after I click Auto log in
+        </label>
+      </p>
+
+      <p>
+        This enters the username and password, submits the MFA code, and selects
+        "No" on the "Stay signed in?" prompt.
+      </p>
+
+      <p>
+        <label for="savedPassword"><b>Purdue password</b></label><br>
+        <input id="savedPassword" type="password" autocomplete="new-password" spellcheck="false" disabled>
+        <br>
+        <small id="passwordStatus">No password saved.</small>
+      </p>
+
+      <p class="warning">
+        <b>Warning:</b> one-click mode stores your password and MFA secret unencrypted
+        in this browser profile. Anyone who can read the profile may be able to obtain both.
+      </p>
+
+      <p>
+        <button id="clearPassword" type="button">Forget saved password</button>
+      </p>
+    </fieldset>
+
+    <p>
+      <button type="submit">Save settings</button>
+      <button id="clearSecret" type="button">Clear secret</button>
+    </p>
+
+    <p id="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <hr>
+
+  <h2>Current test code</h2>
+  <p>Use this code to verify enrollment.</p>
+  <p id="secretState" role="status"></p>
+  <p class="code">
+    <output id="currentCode">------</output>
+    <span id="countdown">--s</span>
+  </p>
+
+  <hr>
+
+  <p class="warning">
+    <b>Security note:</b> the TOTP seed is stored unencrypted in this Chromium profile.
+    Keep another recovery method registered and remove this sign-in method if the device is lost.
+  </p>
+
+  <script src="totp.js"></script>
+  <script src="settings.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+:root { font-family: ui-sans-serif, system-ui, sans-serif; color: #1f1f1f; }
+body { margin: 0; background: #f4f1ea; }
+main { width: 280px; padding: 18px; }
+h1 { font-size: 1.1rem; margin: 0 0 10px; }
+p { line-height: 1.4; }
+#state { font-weight: 700; }
+#state.ready { color: #166534; }
+#state.problem { color: #9b1c1c; }
+button { width: 100%; border: 0; border-radius: 7px; background: #000; color: #fff; cursor: pointer; font: inherit; font-weight: 700; padding: 10px 12px; }
+.note { color: #5c574f; font-size: 0.82rem; margin-bottom: 0; }

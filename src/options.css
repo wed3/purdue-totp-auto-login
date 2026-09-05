@@ -1,0 +1,95 @@
+body {
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 0 16px 40px;
+  background: white;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.35em;
+  margin-bottom: 8px;
+}
+
+hr {
+  margin: 22px 0;
+}
+
+a {
+  color: #0000ee;
+}
+
+a:visited {
+  color: #551a8b;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 360px;
+  max-width: 90%;
+  font: inherit;
+  padding: 2px 4px;
+}
+
+button {
+  font: inherit;
+  padding: 2px 8px;
+}
+
+fieldset {
+  margin: 18px 0;
+  padding: 10px 14px;
+}
+
+legend {
+  padding: 0 4px;
+}
+
+small {
+  color: #444;
+}
+
+.warning {
+  max-width: 680px;
+}
+
+#status {
+  min-height: 1.2em;
+  font-weight: bold;
+}
+
+#status.success {
+  color: green;
+}
+
+#status.error {
+  color: #b00000;
+}
+
+.code {
+  font-family: monospace;
+}
+
+#currentCode {
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  margin-right: 8px;
+}
+
+#countdown {
+  color: #555;
+}
+
+input:disabled {
+  background: #eee;
+  color: #666;
+}

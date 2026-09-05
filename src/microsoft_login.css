@@ -1,0 +1,20 @@
+#purdue-totp-panel {
+  clear: both;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #d6d6d6;
+  text-align: left;
+  font: 14px/1.4 "Segoe UI", sans-serif;
+}
+#purdue-totp-panel button {
+  min-width: 130px;
+  padding: 9px 16px;
+  border: 1px solid #75613c;
+  background: #cfb991;
+  color: #171717;
+  font: 600 14px/1.4 "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+#purdue-totp-panel button:focus-visible { outline: 2px solid #005a9e; outline-offset: 3px; }
+#purdue-totp-panel button:disabled { opacity: 0.6; cursor: wait; }
+#purdue-totp-status { margin: 8px 0 0; color: #333; }
