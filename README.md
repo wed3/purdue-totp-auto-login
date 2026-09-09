@@ -12,6 +12,9 @@ A Chromium extension that completes Purdue's new Microsoft MFA verification code
 
 The Microsoft step runs only in the same tab where you explicitly started a Purdue login. Ordinary Microsoft sign-ins are left alone.
 
+## Disclaimer
+This project was largely vibecoded and as such you will want to audit the code before installing. I have confirmed it to work but you should be sure to double check all functions and workflows yourself before running it. All AI generated code was written by a local LLM running on my own hardware.
+
 ## Install in Chrome, Brave, or Edge
 
 1. Extract this archive to a permanent folder.
